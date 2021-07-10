@@ -6,11 +6,15 @@ const Navbar = () => {
         <h2>logo</h2>
       </div>
       
-      <Link>
+      <Link href="/">
         <a>Home</a>
       </Link>
-      <a>about</a>
-      <a>blog</a>
+      <Link href="/about">
+        <a>about</a>
+      </Link>
+      <Link href="/blog/">
+        <a>blog</a>
+      </Link>
      </nav>
     );
 }
