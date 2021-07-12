@@ -8,25 +8,31 @@ export const getStaticPaths = async() => {
     });
     return ({
         paths,
-        fallback:false}
+        fallback:false
+       }
     )
 }
 export const getStaticProps = async (context) =>{
-      const id = context.params.id;
-      const  res = await fetch('https://jsonplaceholder.typicode.com/users' + id);
+      const  id = context.params.id;
+      const  res = await fetch('https://jsonplaceholder.typicode.com/users/' + id);
       const  data = await res.json();
-      console.log(data);
+     
       return {
           props : {post : data }
       }
 }
-const Datiels = (post) => {
+const Datiels = ({post}) => {
     return (
-        <div>
-            <h1>
-                {post.email}
-            </h1>
-            <p>{post.website}</p>
+        <div className="data-post">
+             <h2>{post.name}</h2>
+             <p><strong>Email : </strong>{post.email}</p>
+             <p><strong>website : </strong>{post.website}</p>
+             <p><strong>username : </strong>{post.username}</p>
+             <p><strong>street : </strong>{post.address.street}</p>
+             <p><strong>City : </strong>{post.address.city}</p>
+             <p><strong>zipcode : </strong>{post.address.zipcode}</p>
+             <p><strong>Company Name : </strong>{post.company.name}</p>
+            {/* <p>{post.website}</p> */}
         </div>
     );
 }

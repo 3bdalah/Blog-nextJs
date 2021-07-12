@@ -25,7 +25,11 @@ const Blog = ({posts}) => {
                     </a>
                    </Link>
              )
-         })}          
+         })}    
+
+         <Link href="/" >
+         <a className={styles.go}>Go Home </a>
+         </Link>      
      </div>
     );
 }

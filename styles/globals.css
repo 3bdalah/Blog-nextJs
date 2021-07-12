@@ -13,11 +13,10 @@ a {
   color: #333;
   text-decoration: none;
 }
-p{
-  text-align: center;
+
+.data-post p{
+  text-transform: capitalize;
 }
-
-
 .btn-home{
   color: #4989ff;
   text-decoration: underline;
